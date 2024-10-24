@@ -1,0 +1,62 @@
+{% include "header.html" %}
+{% load static %}
+
+<body>
+
+
+
+  <main id="main">
+
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+
+
+
+      </div>
+    </section>
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Comisi&oacute;n Directiva</h2>
+          <p>Un equipo de estudiantes universitarios de todo el pa&iacute;s.</p>
+        </div>
+
+        <div class="row">
+            {% for miembro in miembro %}
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{% static "img/" %}{{ miembro.foto }}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="{{ miembro.link_instagram }}"><i class="bi bi-instagram"></i></a>
+                  <a href="{{ miembro.link_twitter }}"><i class="bi bi-twitter-x"></i></a>
+                  <a href="{{ miembro.link_whatsapp }}"><i class="bi bi-whatsapp"></i></a>
+                    <a href="mailto:{{ miembro.link_email }}"><i class="bi bi-envelope"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>{{ miembro.nombre}}</h4>
+                <span>{{ miembro.cargo }}</span>
+              </div>
+            </div>
+
+          </div>
+
+            {% endfor %}
+
+        </div>
+
+      </div>
+
+
+
+    </section>
+      <!-- End Team Section -->
+
+
+  </main><!-- End #main -->
+
+{% include "footer.html" %}

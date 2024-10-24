@@ -50,12 +50,12 @@ JAZZMIN_SETTINGS = {
     "site_logo_classes": "img-circle",
 
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": None,
+    "site_icon": "img/favicon.png",
 
     # Welcome text on the login screen
     "welcome_sign": "Bienvenido al Administrador de la ANEIC|PY",
 
-    # Copyright on the footer
+    # Copyright on the footer.html
     "copyright": "ANEIC|PY",
 
     # List of model admins to search from the search bar, search bar omitted if excluded
@@ -146,6 +146,8 @@ JAZZMIN_SETTINGS = {
 
 INSTALLED_APPS = [
     'jazzmin',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -154,6 +156,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'aneic.apps.AneicConfig',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

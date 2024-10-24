@@ -74,46 +74,97 @@
       </nav>--><!-- .navbar -->
 
       <a href="/inicio" class="get-started-btn scrollto">SITIO WEB</a>
+        <a href="/login" class="get-started-btn scrollto">INCIAR SESION</a>
     </div>
   </header><br><br><!-- End Header -->
 
   <main id="main">
         <div class="registration-form">
 
-  <main id="main">
-    <div class="registration-form">
+  <form enctype="multipart/form-data" method="post" action=" ">
 
-      <form method="post" action="{% url 'login_view' %}">
-        {% csrf_token %}
-        <h2 style="text-align: center; color: gray;">MEMBRESIA ANEIC</h2>
-        <h5 style="text-align: center; color: gray;">Ingresa a tu cuenta y accede a todos tus beneficios.</h5><br><br>
+    <h2 style="text-align: center; color: gray;">ASOCIATE</h2>
+    <h5 style="text-align: center; color: gray;">Completá los siguientes datos para registrarte a la membresía anual.</h5><br><br>
 
-        <div class="form-group">
-          <label for="email">Email</label><br>
-
-          {{ form.email }}
-          {{ form.email.errors }}
-        </div>
-
-        <div class="form-group">
-          <label for="password">Contraseña</label><br>
-          {{ form.password }}
-          {{ form.password.errors }}
-        </div>
-
-        <div class="form-group">
-          <button type="submit" class="btn btn-block create-account">Iniciar Sesión</button>
-        </div>
-
-        {% if form.errors %}
-          <div class="alert alert-danger mt-2" role="alert">
-            El nombre de usuario o la contraseña son incorrectos. Por favor, inténtalo de nuevo.
-          </div>
-        {% endif %}
-      </form>
-
+    <div class="form-group">
+        <label for="picture">Foto de Perfil</label>
+        <input type="file" class="form-control item" id="picture" name="picture" accept="image/*" required>
     </div>
-  </main>
+
+    <div class="form-group">
+        <label for="username">Nombre y Apellido</label>
+        <input type="text" class="form-control item" id="username" name="username" placeholder="Ingresá tu nombre y apellido" required>
+    </div>
+
+    <div class="form-group">
+        <label for="ci-number">Cédula de Identidad</label>
+        <input type="text" class="form-control item" id="ci-number" name="ci_number" placeholder="Ingresá tu número de cédula de identidad" required>
+    </div>
+
+    <div class="form-group">
+        <label for="birth-date">Fecha de Nacimiento</label>
+        <input type="date" class="form-control item" id="birth-date" name="birth_date" placeholder="Fecha de Nacimiento" required>
+    </div>
+
+    <div class="form-group">
+        <label for="phone-number">Teléfono</label>
+        <input type="text" class="form-control item" id="phone-number" name="phone_number" placeholder="Ingresá tu número de teléfono" required>
+    </div>
+
+    <div class="form-group">
+        <label for="sexo">Sexo</label>
+        <select style="margin-top: 0px; padding-top: 5px;" class="form-control item" id="sexo" name="sexo" required>
+            <option value="">Seleccionar</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="universidad">Universidad</label>
+        <select style="margin-top: 0px; padding-top: 5px;" class="form-control item" id="universidad" name="universidad" required>
+            <option value="">Seleccionar</option>
+            <option value="fiuna">Universidad Nacional de Asunción</option>
+            <option value="fcytunca">Universidad Nacional de Caaguazú</option>
+            <option value="fiuni">Universidad Nacional de Itapúa</option>
+            <option value="fiuni">Universidad Nacional del Este</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="curso-actual">Curso Actual</label>
+        <select style="margin-top: 0px; padding-top: 5px;" class="form-control item" id="curso-actual" name="curso_actual" required>
+            <option value="">Seleccionar</option>
+            <option value="1er">1er. Año</option>
+            <option value="2do">2do. Año</option>
+            <option value="3ero">3er. Año</option>
+            <option value="4to">4to. Año</option>
+            <option value="5to">5to. Año</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control item" id="email" name="email" placeholder="Ingresá tu email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" class="form-control item" id="password" name="password" placeholder="Ingresá tu contraseña" required>
+    </div>
+
+    <div class="form-group">
+        <label for="confirm-password">Confirmar Contraseña</label>
+        <input type="password" class="form-control item" id="confirm-password" name="confirm_password" placeholder="Confirmar Contraseña" required>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-block create-account">Asociarme</button>
+    </div>
+
+  </form>
+
+
         <!--<div class="social-media">
             <h5>Sign up with social media</h5>
             <div class="social-icons">

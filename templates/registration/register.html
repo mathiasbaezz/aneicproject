@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+
+<div class="registration-form">
+
+  <form id="register-form" enctype="multipart/form-data" method="post" action=" ">
+      {% csrf_token %}
+
+    <h2 style="text-align: center; color: gray;">ASOCIATE</h2>
+    <h5 style="text-align: center; color: gray;">Completá los siguientes datos para registrarte a la membresía anual.</h5><br><br>
+
+    <div class="form-group">
+        {{ form | crispy }}
+    </div>
+
+
+    <div class="form-group d-flex justify-content-between align-items-center">
+        <a href="{% url 'login' %}" class="card-link">Iniciar sesión</a>
+        <button type="submit" class="btn create-account">Asociarme</button>
+    </div>
+
+
+
+
+
+  </form>
+
+    </div>
+{% endblock %}
